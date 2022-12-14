@@ -24,7 +24,7 @@ with open('commands_list.yml', 'r') as infile:
     except yaml.YAMLError as exc:
         print(exc)
 
-# Set the variable proceed to true for the user dialoge
+# Set the variable proceed to true for the user dialogue
 proceed = True
 
 # Print what devices and what commands will be run
@@ -43,7 +43,7 @@ while proceed:
     if response.upper() == "Y":
         # Write a bunch of ### to make the output more readable
         print("##################################################")
-        # Run through the list of devices from the file devices_list.yml and send the pre defined commands
+        # Run through the list of devices from the file devices_list.yml and send the pre-defined commands
         for device_ip in devices_list:
             try:
                 # Connect to the device
@@ -68,7 +68,7 @@ while proceed:
                 print(f'SSH issue to device: {device_ip}')
         proceed = False
     elif response.upper() == "N":
-        # Change the variable proceed to False to stop the loop
+        # Change the variable proceed to False in order to stop the loop
         proceed = False
     else:
         # If the user responds with anything other than Y or N, ask the user again to respond with Y or N
@@ -83,5 +83,3 @@ print("***************** End of program *****************")
 print("**************************************************")
 print("**************************************************")
 print("**************************************************")
-
-
