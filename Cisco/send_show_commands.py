@@ -18,7 +18,7 @@ with open('devices_list.yml', 'r') as infile:
         print(exc)
 
 # Read the file command_list.yml
-with open('commands_list.yml', 'r') as infile:
+with open('show_commands_list.yml', 'r') as infile:
     try:
         commands_list = yaml.load(infile, Loader=yaml.SafeLoader)
     except yaml.YAMLError as exc:
@@ -50,20 +50,11 @@ while proceed:
                 net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username, password=password)
                 # Print out successful connection
                 print("Connected to device: " + device_ip)
-                # Print info about current nameservers
-                nameservers = net_connect.send_command("sh run | i name-server")
-                print("Current nameservers for this device are: ")
-                print(nameservers)
-                # Print info about new configuration
-                print("Configuring new nameservers for device: " + device_ip)
-                # Send the list of commands
+                # Send the list of commands and print the output
                 for command in commands_list:
                     print("Sending command: " + command)
-                    net_connect.send_config_set(command)
-                # Get info about and print the current configured nameservers
-                nameservers = net_connect.send_command("sh run | i name-server")
-                print("Nameservers after configuration are: ")
-                print(nameservers)
+                    output = net_connect.send_command(command)
+                    print(output)
                 # Close the ssh session
                 net_connect.disconnect()
                 print("Disconnected from device: " + device_ip)
