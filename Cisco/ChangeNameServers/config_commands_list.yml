@@ -1,2 +1,4 @@
 - no ip name-server 172.16.80.15
 - no ip name-server 172.16.80.50
+- ip name-server
+- ip name-server
