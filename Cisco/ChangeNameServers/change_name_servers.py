@@ -47,18 +47,19 @@ while proceed:
         for device_ip in devices_list:
             try:
                 # Connect to the device
-                net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username, password=password)
+                net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username,
+                                             password=password)
                 # Print out successful connection
-                print("Connected to device: " + device_ip)
+                print(f"Connected to device: {device_ip}")
                 # Print info about current nameservers
                 nameservers = net_connect.send_command("sh run | i name-server")
                 print("Current nameservers for this device are: ")
                 print(nameservers)
                 # Print info about new configuration
-                print("Configuring new nameservers for device: " + device_ip)
+                print(f"Configuring new nameservers for device: {device_ip}")
                 # Send the list of commands
                 for command in commands_list:
-                    print("Sending command: " + command)
+                    print(f"Sending command: {command}")
                     net_connect.send_config_set(command)
                 # Get info about and print the current configured nameservers
                 nameservers = net_connect.send_command("sh run | i name-server")
@@ -66,7 +67,7 @@ while proceed:
                 print(nameservers)
                 # Close the ssh session
                 net_connect.disconnect()
-                print("Disconnected from device: " + device_ip)
+                print(f"Disconnected from device: {device_ip}")
                 # Print a bunch of ### to separate each run and make it mor§e readable
                 print("##################################################")
             # Error handling

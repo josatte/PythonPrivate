@@ -47,17 +47,20 @@ while proceed:
         for device_ip in devices_list:
             try:
                 # Connect to the device
-                net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username, password=password)
+                net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username,
+                                             password=password)
                 # Print out successful connection
-                print("Connected to device: " + device_ip)
+                print("Connected to device: {device_ip")
                 # Send the list of commands and print the output
                 for command in commands_list:
-                    print("Sending command: " + command)
+                    print(f"Sending command: {command}")
+                    print("____")
                     output = net_connect.send_command(command)
                     print(output)
+                    print("--------------------------------------------------")
                 # Close the ssh session
                 net_connect.disconnect()
-                print("Disconnected from device: " + device_ip)
+                print(f"Disconnected from device: {device_ip}")
                 # Print a bunch of ### to separate each run and make it mor§e readable
                 print("##################################################")
             # Error handling
@@ -67,9 +70,10 @@ while proceed:
                 print(f'Timeout to device: {device_ip}')
             except SSHException:
                 print(f'SSH issue to device: {device_ip}')
+        # Change the variable "proceed" to False in order to prevent an infinite loop
         proceed = False
     elif response.upper() == "N":
-        # Change the variable proceed to False in order to stop the loop
+        # Change the variable "proceed" to False in order to stop the loop
         proceed = False
     else:
         # If the user responds with anything other than Y or N, ask the user again to respond with Y or N

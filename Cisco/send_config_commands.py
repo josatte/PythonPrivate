@@ -47,16 +47,17 @@ while proceed:
         for device_ip in devices_list:
             try:
                 # Connect to the device
-                net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username, password=password)
+                net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username,
+                                             password=password)
                 # Print out successful connection
-                print("Connected to device: " + device_ip)
+                print(f"Connected to device: {device_ip}")
                 # Send the list of commands
                 for command in commands_list:
-                    print("sending command " + command)
+                    print(f"Sending command {command}")
                     net_connect.send_config_set(command)
                 # Close the ssh session
                 net_connect.disconnect()
-                print("Disconnected from device: " + device_ip)
+                print(f"Disconnected from device: {device_ip}")
                 # Print a bunch of ### to separate each run and make it more readable
                 print("##################################################")
             # Error handling
@@ -66,6 +67,7 @@ while proceed:
                 print(f'Timeout to device: {device_ip}')
             except SSHException:
                 print(f'SSH issue to device: {device_ip}')
+        # Change the variable "proceed" to False in order to prevent an infinite loop
         proceed = False
     elif response.upper() == "N":
         # Change the variable proceed to False in order to stop the loop
