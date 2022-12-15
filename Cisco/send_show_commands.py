@@ -31,7 +31,7 @@ proceed = True
 print("The following devices:")
 for device in devices_list:
     print(device)
-print("will be configured with the following commands:")
+print("will be sent the following commands:")
 for command in commands_list:
     print(command)
 
