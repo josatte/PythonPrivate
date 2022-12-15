@@ -18,7 +18,7 @@ with open('devices_list.yml', 'r') as infile:
         print(exc)
 
 # Read the file command_list.yml
-with open('commands_list.yml', 'r') as infile:
+with open('config_commands_list.yml', 'r') as infile:
     try:
         commands_list = yaml.load(infile, Loader=yaml.SafeLoader)
     except yaml.YAMLError as exc:
