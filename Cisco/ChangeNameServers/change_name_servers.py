@@ -52,7 +52,7 @@ while proceed:
                 # Print out successful connection
                 print(f"Connected to device: {device_ip}")
                 # Print info about current nameservers
-                nameservers = net_connect.send_command("sh run | i name-server")
+                nameservers = [net_connect.send_command("sh run | i name-server")]
                 print("Current nameservers for this device are: ")
                 #print(nameservers)
                 for nameserver in nameservers:
