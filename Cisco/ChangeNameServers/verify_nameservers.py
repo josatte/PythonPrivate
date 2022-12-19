@@ -50,7 +50,9 @@ while proceed:
                 net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username,
                                              password=password)
                 # Print out successful connection
-                print("Connected to device: {device_ip")
+                print(f"Connected to device: {device_ip}")
+                with open("results/verify_nameservers.txt", 'a') as file:
+                    file.write(f"Connected to device: {device_ip}\n")
                 # Send the list of commands and print the output
                 for command in commands_list:
                     print(f"Sending command: {command}")
@@ -58,6 +60,9 @@ while proceed:
                     output = net_connect.send_command(command)
                     print(output)
                     print("--------------------------------------------------")
+                    with open("results/verify_nameservers.txt", 'a') as file:
+                        file.write(f"Nameservers: {output}\n")
+                        print("--------------------------------------------------")
                 # Close the ssh session
                 net_connect.disconnect()
                 print(f"Disconnected from device: {device_ip}")
