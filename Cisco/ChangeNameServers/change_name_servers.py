@@ -54,10 +54,7 @@ while proceed:
                 # Print info about current nameservers
                 nameservers = [net_connect.send_command("sh run | i name-server")]
                 print("Current nameservers for this device are: ")
-                #print(nameservers)
-                for nameserver in nameservers:
-                    nameserver_split = nameserver.split('ip name-server ')
-                    print(nameserver_split)
+                print(nameservers)
                 # Print info about new configuration
                 print(f"Configuring new nameservers for device: {device_ip}")
                 # Send the list of commands
