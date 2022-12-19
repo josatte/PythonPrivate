@@ -63,7 +63,7 @@ while proceed:
                     with open("results/verify_nameservers.txt", 'a') as file:
                         file.write(f"Nameservers: \n")
                         file.write(f"{output}\n")
-                        file.write(f"--------------------------------------------------")
+                        file.write(f"-------------------------------------------------- \n")
                 # Close the ssh session
                 net_connect.disconnect()
                 print(f"Disconnected from device: {device_ip}")
