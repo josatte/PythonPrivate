@@ -77,9 +77,9 @@ while proceed:
                 print("##################################################")
             # Error handling
             except NetMikoAuthenticationException:
-                with open ("Authentication_timeout.txt", 'a') as file:
+                with open("Authentication_timeout.txt", 'a') as file:
                     file.write(f'Auth timeout to device: {device_ip}')
-                print(f'Auth timeout to device: {device_ip}')
+                print(f'Auth timeout to device: {device_ip}\n')
             except NetMikoTimeoutException:
                 print(f'Timeout to device: {device_ip}')
             except SSHException:
