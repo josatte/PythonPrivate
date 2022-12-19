@@ -65,6 +65,9 @@ while proceed:
                 nameservers = net_connect.send_command("sh run | i name-server")
                 print("Nameservers after configuration are: ")
                 print(nameservers)
+                # Save the configuration
+                print("Saving configuration")
+                net_connect.save_config()
                 # Close the ssh session
                 net_connect.disconnect()
                 print(f"Disconnected from device: {device_ip}")
