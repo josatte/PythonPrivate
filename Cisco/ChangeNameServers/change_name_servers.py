@@ -71,7 +71,7 @@ while proceed:
                 # Close the ssh session
                 net_connect.disconnect()
                 print(f"Disconnected from device: {device_ip}")
-                # Print a bunch of ### to separate each run and make it mor§e readable
+                # Print a bunch of ### to separate each run and make it more readable
                 print("##################################################")
             # Error handling
             except NetMikoAuthenticationException:
