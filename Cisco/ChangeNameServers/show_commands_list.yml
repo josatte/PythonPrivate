@@ -1,1 +1,1 @@
-show run | i name-server
+- show run | i name-server
