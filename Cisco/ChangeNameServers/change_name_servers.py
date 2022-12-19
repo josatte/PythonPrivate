@@ -68,7 +68,8 @@ while proceed:
                 print(nameservers)
                 # Save the configuration
                 print("Saving configuration")
-                net_connect.save_config()
+                output = net_connect.save_config()
+                print(output)
                 # Close the ssh session
                 net_connect.disconnect()
                 print(f"Disconnected from device: {device_ip}")
