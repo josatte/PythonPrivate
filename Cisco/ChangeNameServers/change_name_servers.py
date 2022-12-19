@@ -60,7 +60,8 @@ while proceed:
                 # Send the list of commands
                 for command in commands_list:
                     print(f"Sending command: {command}")
-                    net_connect.send_config_set(command)
+                    output = net_connect.send_config_set(command)
+                    print(output)
                 # Get info about and print the current configured nameservers
                 nameservers = net_connect.send_command("sh run | i name-server")
                 print("Nameservers after configuration are: ")
