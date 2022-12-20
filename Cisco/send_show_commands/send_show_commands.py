@@ -11,7 +11,7 @@ username = input("Username: ")
 password = getpass()
 
 # Read the file device_list.yml
-with open('devices_list.yml', 'r') as infile:
+with open('../send_config_commands/devices_list.yml', 'r') as infile:
     try:
         devices_list = yaml.load(infile, Loader=yaml.SafeLoader)
     except yaml.YAMLError as exc:
