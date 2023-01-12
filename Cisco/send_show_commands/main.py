@@ -53,6 +53,7 @@ while proceed:
                 print("Connected to device: {device_ip")
                 with open("results/show_command_results.txt", 'a') as file:
                     file.write(f"Connected to device: {device_ip}\n")
+                    file.write(f"____ \n")
                 # Send the list of commands and print the output
                 for command in commands_list:
                     print(f"Sending command: {command}")
