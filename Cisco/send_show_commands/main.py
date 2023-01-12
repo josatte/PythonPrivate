@@ -58,6 +58,9 @@ while proceed:
                     output = net_connect.send_command(command)
                     print(output)
                     print("--------------------------------------------------")
+                    with open("results/show_command_results.txt", 'a') as file:
+                        file.write(f"{output}\n")
+                        file.write(f"-------------------------------------------------- \n")
                 # Close the ssh session
                 net_connect.disconnect()
                 print(f"Disconnected from device: {device_ip}")
