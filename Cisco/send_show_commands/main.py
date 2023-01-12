@@ -65,11 +65,23 @@ while proceed:
                 print("##################################################")
             # Error handling
             except NetMikoAuthenticationException:
+                with open("results/authentication_timeout.txt", 'a') as file:
+                    file.write(f'Auth timeout to device: {device_ip}\n')
                 print(f'Auth timeout to device: {device_ip}')
+                # Print a bunch of ### to separate each run and make it more readable
+                print("##################################################")
             except NetMikoTimeoutException:
+                with open("results/device_timeout.txt", 'a') as file:
+                    file.write(f'Timeout to device: {device_ip}\n')
                 print(f'Timeout to device: {device_ip}')
+                # Print a bunch of ### to separate each run and make it more readable
+                print("##################################################")
             except SSHException:
+                with open("results/ssh_issue.txt", 'a') as file:
+                    file.write(f'SSH issue to device: {device_ip}\n')
                 print(f'SSH issue to device: {device_ip}')
+                # Print a bunch of ### to separate each run and make it more readable
+                print("##################################################")
         # Change the variable "proceed" to False in order to prevent an infinite loop
         proceed = False
     elif response.upper() == "N":
