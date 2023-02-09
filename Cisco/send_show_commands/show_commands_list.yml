@@ -1,1 +1,1 @@
-- show version
+- show running-config | include ntp
