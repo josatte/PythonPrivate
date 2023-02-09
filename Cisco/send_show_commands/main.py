@@ -50,7 +50,7 @@ while proceed:
                 net_connect = ConnectHandler(device_type='cisco_ios', ip=device_ip, username=username,
                                              password=password)
                 # Print out successful connection
-                print("Connected to device: {device_ip}")
+                print(f"Connected to device: {device_ip}")
                 with open("results/show_command_results.txt", 'a') as file:
                     file.write(f"Connected to device: {device_ip}\n")
                     file.write(f"____ \n")
