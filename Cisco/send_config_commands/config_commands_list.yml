@@ -1,2 +1,2 @@
-- logging buffered 20000000
-- logging persistent url flash:/logs size 104857600 filesize 5242880
+- ntp server 10.28.4.10
+- ntp server time.falun.se prefer
