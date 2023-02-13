@@ -38,7 +38,7 @@ for command in commands_list:
 # Ask the user for input in order to proceed or exit
 response = input("Do you want to proceed? (Y/N): ")
 
-# Check if the user responded N or Y
+# Check if the user responded N or Y, if Y continue with for loop
 while proceed:
     if response.upper() == "Y":
         # Write a bunch of ### to make the output more readable
