@@ -1,1 +1,1 @@
-- show running-config | include ntp
+- show version | i C9200
