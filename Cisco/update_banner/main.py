@@ -69,7 +69,7 @@ while proceed:
 , '        *##                        ##* '
 , '           *##########  ##########* '
 , '                 **########**'
-, '
+, ''
 , 'This device is managed by NOC @ Falu kommun.'
 , 'Unauthorized access to this device is prohibited.'
 , ''
