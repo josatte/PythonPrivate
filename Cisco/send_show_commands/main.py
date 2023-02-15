@@ -10,7 +10,7 @@ print("Enter username and password that you wish to run the script with")
 username = input("Username: ")
 password = getpass()
 
-# Read the file device_list.yml
+# Read the file devices_list.yml
 with open('devices_list.yml', 'r') as infile:
     try:
         devices_list = yaml.load(infile, Loader=yaml.SafeLoader)
