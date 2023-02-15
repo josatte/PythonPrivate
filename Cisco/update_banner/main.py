@@ -43,7 +43,7 @@ while proceed:
                 # Print out successful connection
                 print(f"Connected to device: {device_ip}")
                 # Send the list of commands
-                print(ssh_conn.send_config_set(['banner login ~'
+                print(net_connect.send_config_set(['banner login ~'
 , '#############################################                                                                                                       '
 , '##                                          #                                                                                                                   '
 , '##      ###           ##           ##       #                                     ######                                                                        '
