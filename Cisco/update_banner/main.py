@@ -77,6 +77,7 @@ while proceed:
 , 'You must have explicit, authorized permission to access or configure this device.'
 , 'Unauthorized attempts and actions to access or use this system may result in civil and/or criminal penalties.'
 , 'All activities performed on this device are logged and monitored.'
+, ''
 , '~'
 ]))
                 # Save the configuration
