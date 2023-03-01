@@ -1,1 +1,2 @@
-- show version | i C9200
+- show run | i **########**
+- show run | i logging
