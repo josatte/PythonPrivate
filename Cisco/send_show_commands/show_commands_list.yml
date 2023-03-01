@@ -1,2 +1,2 @@
-- show run | i **########**
+- show run | i ########
 - show run | i logging
