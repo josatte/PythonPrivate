@@ -1,3 +1,1 @@
-- show run | i ,
-- show run | i logging buffered
-- show run | i logging persistent
+- show version
