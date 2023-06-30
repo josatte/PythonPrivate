@@ -58,7 +58,7 @@ while proceed:
                 for command in commands_list:
                     print(f"Sending command: {command}")
                     print("____")
-                    output = net_connect.send_command(command)
+                    output = net_connect.send_command(command, read_timeout=90)
                     print(output)
                     print("--------------------------------------------------")
                     with open("results/show_command_results.txt", 'a') as file:
