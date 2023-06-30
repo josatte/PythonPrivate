@@ -75,7 +75,7 @@ while proceed:
                     file.write(f'Auth timeout to device: {device_ip}\n')
                 print(f'Auth timeout to device: {device_ip}')
                 # Print a bunch of ### to separate each run and make it more readable
-                print("##################################################")
+                print("###################################################")
             except NetMikoTimeoutException:
                 with open("results/device_timeout.txt", 'a') as file:
                     file.write(f'Timeout to device: {device_ip}\n')
