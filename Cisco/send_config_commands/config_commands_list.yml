@@ -1,2 +1,6 @@
-- ip domain-name net.falun.se
-- ip domain name net.falun.se
+- device-tracking policy TRUNK-IP-SPARNING
+- trusted-port
+- device-role switch
+- no protocol udp
+- interface GigabitEthernet1/1/4
+- device-tracking attach-policy TRUNK-IP-SPARNING
