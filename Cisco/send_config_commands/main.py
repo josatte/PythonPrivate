@@ -52,10 +52,11 @@ while proceed:
                 # Print out successful connection
                 print(f"Connected to device: {device_ip}")
                 # Send the list of commands
-                for command in commands_list:
-                    print(f"Sending command {command}")
-                    output = net_connect.send_config_set(command)
-                    print(output)
+                output = net_connect.send_config_set(commands_list)
+#                for command in commands_list:
+#                  print(f"Sending command {command}")
+#                    output = net_connect.send_config_set(command)
+#                    print(output)
                 # Save the configuration
                 print("Saving configuration")
                 net_connect.save_config()
